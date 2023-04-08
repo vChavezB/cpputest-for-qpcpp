@@ -12,9 +12,12 @@ env:
 
 jobs:
   zephyr_sample:
+    env:
+      ZEPHYR_VERSION: 3.3.0
+      ZEPHYR_CI_VERSION: v0.26.0
     runs-on: ubuntu-20.04
     container: 
-      image:  zephyrprojectrtos/ci
+      image:  zephyrprojectrtos/ci:${ZEPHYR_CI_VERSION}
       options: --user root
     steps:
     - uses: actions/checkout@v3
@@ -22,9 +25,9 @@ jobs:
         submodules: recursive
     - name: CPPU Test dependencies
       run: apt-get update && apt install -y cpputest pkg-config gcc-multilib g++-multilib
-    - name: Clone Zephyr
+    - name: Clone Zephyr RTOS
       run: |
-            west init -m https://github.com/zephyrproject-rtos/zephyr --mr v3.3.0 zephyr \
+            west init -m https://github.com/zephyrproject-rtos/zephyr --mr v${ZEPHYR_VERSION} zephyr \
             && cd zephyr \
             && west update
     - name: build
