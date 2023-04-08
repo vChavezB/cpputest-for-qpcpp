@@ -46,6 +46,6 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: zephyr_bin
-        path: build/zephyr/zephyr.exe
+        path: zephyr_bin
     - run: find -name zephyr.exe
 
