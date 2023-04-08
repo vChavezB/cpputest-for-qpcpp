@@ -71,6 +71,5 @@ jobs:
       with:
         name: zephyr_bin
         path: build/zephyr/zephyr.exe
-
-    - run: ./build/zephyr/zephyr.exe
+    - run: ./zephyr.exe
 
