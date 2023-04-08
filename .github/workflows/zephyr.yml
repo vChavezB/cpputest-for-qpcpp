@@ -47,5 +47,9 @@ jobs:
       with:
         name: zephyr_bin
         path: zephyr_bin
-    - run: find -name zephyr.exe
+    - run: |
+          cd zephyr_bin \
+          && chmod +x zephyr.exe \
+          && ./zephyr.exe
+          
 
