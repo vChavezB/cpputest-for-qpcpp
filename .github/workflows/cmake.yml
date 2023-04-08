@@ -28,7 +28,8 @@ jobs:
       run: |
             west init -m https://github.com/zephyrproject-rtos/zephyr --mr v${ZEPHYR_VERSION} zephyr \
             && cd zephyr \
-            && west update
+            && west update \
+            && west build ../examples/zephyr_posix --pristine --board native_posix_64
     - name: build
       run: | 
             ./opt/toolchains/zephyr-sdk-0.16.0/setup.sh \
