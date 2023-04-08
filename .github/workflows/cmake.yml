@@ -14,10 +14,9 @@ jobs:
   zephyr_sample:
     env:
       ZEPHYR_VERSION: 3.3.0
-      ZEPHYR_CI_VERSION: v0.26.0
     runs-on: ubuntu-20.04
     container: 
-      image:  zephyrprojectrtos/ci:${ZEPHYR_CI_VERSION}
+      image:  zephyrprojectrtos/ci:v0.26.0
       options: --user root
     steps:
     - uses: actions/checkout@v3
