@@ -25,6 +25,6 @@ jobs:
     - name: build
       run: west build examples/zephyr_posix --pristine --board native_posix_64 && ls
     - name: run
-      run: ls build
+      run: ./build/zephyr/zephyr.exe
 
 
