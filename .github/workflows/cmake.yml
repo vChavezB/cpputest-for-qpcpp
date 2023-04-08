@@ -11,16 +11,19 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  zephyr:
+  zephyr_sample:
     runs-on: ubuntu-20.04
     container: 
-      image:  zephyrprojectrtos/zephyr-build
+      image:  nordicplayground/nrfconnect-sdk:main
       options: --user root
     steps:
     - uses: actions/checkout@v3
       with:
         submodules: recursive
     - name: Install Dependencies
-      run: sudo apt-get update && sudo apt install -y cpputest pkg-config gcc-multilib g++-multilib
+      run: apt install -y cpputest pkg-config gcc-multilib g++-multilib
     - name: build
       run: west build . --pristine --board native_posix_64
+    - name: run
+      run: ./build/zephyr/zephyr.exe
+
