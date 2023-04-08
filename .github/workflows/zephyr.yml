@@ -48,7 +48,7 @@ jobs:
         name: zephyr_bin
         path: zephyr_bin
     - run: |
-          apt-get update &&  \apt install -y cpputest pkg-config gcc-multilib g++-multilib \
+          sudo apt install -y cpputest pkg-config gcc-multilib g++-multilib \
           && cd zephyr_bin \
           && chmod +x zephyr.exe \
           && ./zephyr.exe
