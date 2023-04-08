@@ -21,9 +21,9 @@ jobs:
       with:
         submodules: recursive
     - name: dir
-      run: cd\ && ls
-    - name: dir
-      run: cd\ && ls /workdir
+      run: pwd
+    - name: dir2
+      run: cd ..
     - name: Dependencies
       run: apt-get update && apt install -y cpputest pkg-config gcc-multilib g++-multilib
     - name: build
