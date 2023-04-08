@@ -10,7 +10,8 @@ env:
   ZEPHYR_VERSION: 3.2.0
   ZEPHYR_SDK_INSTALL_DIR: /opt/toolchains/zephyr-sdk-0.16.0/
 jobs:
-    name: Build Zephyr example
+  build:
+    name: Build the Zephyr example
     runs-on: ubuntu-20.04
     container: 
       image:  zephyrprojectrtos/ci:v0.26.0
@@ -35,10 +36,10 @@ jobs:
       with:
         name: zephyr_bin
         path: build/zephyr/zephyr.exe
-  zephyr_test:
-    name: Run the zephyr example
+  run:
+    name: Run the Zephyr example
     runs-on: ubuntu-20.04
-    needs: zephyr_build
+    needs: build
     steps:
     - uses: actions/checkout@master
 
