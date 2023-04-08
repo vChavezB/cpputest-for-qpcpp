@@ -12,8 +12,8 @@ env:
 
 jobs:
   zephyr:
-    runs-on: nordicplayground/nrfconnect-sdk:main
-
+    runs-on: ubuntu-20.04
+    container: zephyrprojectrtos/zephyr-build
     steps:
     - uses: actions/checkout@v3
       with:
