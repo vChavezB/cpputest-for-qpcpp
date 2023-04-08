@@ -54,9 +54,10 @@ jobs:
             && west update
     - name: build
       run: | 
-            cd zephyr \
-            && west build ../examples/zephyr_posix --build-dir .. --pristine --board native_posix_64 \
+            mkdir build \
+            && cd zephyr \
+            && west build ../examples/zephyr_posix --build-dir ../build --pristine --board native_posix_64 \
     - name: run
-      run: find -name zephyr.exe && ./zephyr/zephyr.exe
+      run: ./build/zephyr/zephyr.exe
 
 
