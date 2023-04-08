@@ -56,8 +56,7 @@ jobs:
       run: | 
             cd zephyr \
             && west build ../examples/zephyr_posix --build-dir .. --pristine --board native_posix_64 \
-            && cd .. && find -name zephyr.exe
     - name: run
-      run: ./build/zephyr/zephyr.exe
+      run: find -name zephyr.exe && ./zephyr/zephyr.exe
 
 
