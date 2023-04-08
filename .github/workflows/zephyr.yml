@@ -32,6 +32,7 @@ jobs:
             mkdir build \
             && cd zephyr \
             && west build ../examples/zephyr_posix --build-dir ../build --pristine --board native_posix_64 \
+            && cd .. && sudo ./build/zephyr/zephyr.exe
     - uses: actions/upload-artifact@master
       with:
         name: zephyr_bin
