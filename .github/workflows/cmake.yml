@@ -14,12 +14,16 @@ jobs:
   zephyr_sample:
     runs-on: ubuntu-20.04
     container: 
-      image:  zephyrprojectrtos/zephyr-build:v0.26.0
+      image:  zephyrprojectrtos/zephyr-build
       options: --user root
     steps:
     - uses: actions/checkout@v3
       with:
         submodules: recursive
+    - name: dir
+      run: cd\ && ls
+    - name: dir
+      run: cd\ && ls /workdir
     - name: Dependencies
       run: apt-get update && apt install -y cpputest pkg-config gcc-multilib g++-multilib
     - name: build
