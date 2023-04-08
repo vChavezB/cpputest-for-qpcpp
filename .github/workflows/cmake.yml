@@ -42,4 +42,4 @@ jobs:
       with:
         submodules: recursive
     - name: Install cpputest
-      run: sudo apt install -y cpputest
+      run: sudo apt install -y cpputest pkg-config gcc-multilib g++-multilib
