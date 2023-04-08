@@ -31,27 +31,7 @@ jobs:
       run: | 
             mkdir build \
             && cd zephyr \
-            && west build ../examples/zephyr_posix --build-dir ../build --pristine --board native_posix_64 \
-            && cd .. && sudo ./build/zephyr/zephyr.exe
-    - uses: actions/upload-artifact@master
-      with:
-        name: zephyr_bin
-        path: build/zephyr/zephyr.exe
-        retention-days: 1
-  run:
-    name: Run the Zephyr example
-    runs-on: ubuntu-20.04
-    needs: build
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: zephyr_bin
-        path: zephyr_bin
-    - run: |
-          sudo apt install -y cpputest pkg-config gcc-multilib g++-multilib \
-          && cd zephyr_bin \
-          && chmod +x zephyr.exe \
-          && ./zephyr.exe
-          
+            && west build ../examples/zephyr_posix --build-dir ../build --pristine --board native_posix_64
+    - name: run
+      run: sudo ./build/zephyr/zephyr.exe
 
