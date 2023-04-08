@@ -23,8 +23,8 @@ jobs:
     - name: Install Dependencies
       run: apt install -y cpputest pkg-config gcc-multilib g++-multilib
     - name: build
-      run: west build . --pristine --board native_posix_64 && ls
+      run: west build examples/zephyr_posix --pristine --board native_posix_64 && ls
     - name: run
-      run: ls
+      run: ls build
 
 
