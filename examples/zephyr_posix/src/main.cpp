@@ -101,8 +101,9 @@ TEST(MeasurementSM, alarm_reset)
 
 void main(void)
 {
+	printk("Start\n");
 	char** av{nullptr};
 	auto const test_Res = CommandLineTestRunner::RunAllTests(0, av);
 	/* Exit before main ends otherwise zephyr does not exit */
-    posix_exit(test_Res);
+	posix_exit(test_Res);
 }
