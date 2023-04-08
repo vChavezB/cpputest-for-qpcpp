@@ -13,7 +13,9 @@ env:
 jobs:
   zephyr:
     runs-on: ubuntu-20.04
-    container: zephyrprojectrtos/zephyr-build
+    container: 
+      image:  zephyrprojectrtos/zephyr-build
+      options: --user root
     steps:
     - uses: actions/checkout@v3
       with:
