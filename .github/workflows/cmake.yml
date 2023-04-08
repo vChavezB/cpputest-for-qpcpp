@@ -21,7 +21,7 @@ jobs:
       with:
         submodules: recursive
     - name: Dependencies
-      run: apt install -y cpputest pkg-config gcc-multilib g++-multilib
+      run: apt-get update && apt install -y cpputest pkg-config gcc-multilib g++-multilib
     - name: build
       run: cd /workdir/zephyr && west build examples/zephyr_posix --pristine --board native_posix_64
     - name: run
