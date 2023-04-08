@@ -14,7 +14,7 @@ jobs:
   zephyr_sample:
     runs-on: ubuntu-20.04
     container: 
-      image:  nordicplayground/nrfconnect-sdk:main
+      image:  registry.git.fh-aachen.de/embeddedtools/nrf-docker:v2.2.0
       options: --user root
     steps:
     - uses: actions/checkout@v3
