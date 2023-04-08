@@ -63,6 +63,7 @@ jobs:
         path: build/zephyr/zephyr.exe
   test:
     runs-on: ubuntu-20.04
+    needs: zephyr
     steps:
     - uses: actions/checkout@master
 
