@@ -36,6 +36,7 @@ jobs:
       with:
         name: zephyr_bin
         path: build/zephyr/zephyr.exe
+        retention-days: 1
   run:
     name: Run the Zephyr example
     runs-on: ubuntu-20.04
