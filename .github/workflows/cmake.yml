@@ -31,8 +31,8 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}     
-  zephyr:
-    name: Zephyr posix
+  zephyr_build:
+    name: Build Zephyr example
     needs: build
     env:
       ZEPHYR_VERSION: 3.2.0
@@ -61,9 +61,10 @@ jobs:
       with:
         name: zephyr_bin
         path: build/zephyr/zephyr.exe
-  test:
+  zephyr_test:
+    name: Run the zephyr example
     runs-on: ubuntu-20.04
-    needs: zephyr
+    needs: zephyr_build
     steps:
     - uses: actions/checkout@master
 
