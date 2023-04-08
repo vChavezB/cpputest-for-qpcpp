@@ -32,7 +32,7 @@ jobs:
             && west update
     - name: build
       run: | 
-            && cd zephyr \
+            cd zephyr \
             && west build ../examples/zephyr_posix --pristine --board native_posix_64
     - name: run
       run: ./build/zephyr/zephyr.exe
