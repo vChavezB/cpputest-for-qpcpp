@@ -48,5 +48,5 @@ jobs:
       with:
         name: zephyr_bin
         path: build/zephyr/zephyr.exe
-    - run: ./zephyr.exe
+    - run: chmod +x zephyr.exe && ./zephyr.exe
 
